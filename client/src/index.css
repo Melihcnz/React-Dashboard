@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-webkit-scrollbar {
+    width: 10px;  /* Dikey kaydırma çubuğu genişliği */
+    height: 10px; /* Yatay kaydırma çubuğu yüksekliği */
+  }
+  
+  /* Kaydırma çubuğu izi */
+  ::-webkit-scrollbar-track {
+    background: #2a303c;  /* Dark mode için koyu arka plan */
+    border-radius: 5px;
+  }
+  
+  /* Kaydırma çubuğu başparmağı */
+  ::-webkit-scrollbar-thumb {
+    background: #4b5563;  /* Kaydırma çubuğu rengi */
+    border-radius: 5px;
+    border: 2px solid #2a303c;
+  }
+  
+  /* Hover durumunda kaydırma çubuğu */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #606975;
+  }
+  
+  /* Sayfanın ana içeriğini düzenle */
+  .drawer-content {
+    overflow-y: auto;  /* Dikey kaydırma çubuğunu etkinleştir */
+    overflow-x: hidden; /* Yatay kaydırmayı devre dışı bırak */
+    height: 100vh; /* Tam ekran yüksekliği */
+  }
+  
+  /* Tablo container'ı için kaydırma ayarları */
+  .table-container {
+    overflow-x: auto;
+    max-width: 100%;
+    scrollbar-gutter: stable;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Mobil cihazlarda dokunmatik kaydırma desteği */
+  @media (hover: none) and (pointer: coarse) {
+    .drawer-content {
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+  
+  /* Kaydırma çubuğu için dark/light mode desteği */
+  [data-theme='light'] ::-webkit-scrollbar-track {
+    background: #f1f5f9;
+  }
+  
+  [data-theme='light'] ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border: 2px solid #f1f5f9;
+  }
+  
+  [data-theme='light'] ::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+  }
+
+  .scanner-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  #reader {
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  #reader video {
+    width: 100% !important;
+    height: auto !important;
+  }
+
